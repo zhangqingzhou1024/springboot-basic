@@ -33,7 +33,7 @@
         <!-- 2.7.3 -->
         <apache-dubbo.version>2.7.3</apache-dubbo.version>
         <apache-dubbo-starter.version>2.7.3</apache-dubbo-starter.version>
-        <zookeeper.version>3.4.11</zookeeper.version>
+        <zookeeper.version>3.4.14</zookeeper.version>
         <zkclient.version>0.10</zkclient.version>
         <!-- curator -->
         <curator.version>4.2.0</curator.version>
