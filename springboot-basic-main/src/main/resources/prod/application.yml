@@ -1,0 +1,36 @@
+#项目-服务设置
+server:
+  port: 8089
+  tomcat:
+    uri-encoding: utf-8
+
+# spring 相关配置（如多配置文件）
+spring:
+  profiles:
+    active: dev
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://serverIp:3306/springboot_study?useUnicode=true&characterEncoding=UTF-8
+    username: data
+    password: 2020@*#DatA
+    initialSize: 10
+    maxIdle: 50
+    minIdle: 6
+    maxActive: 50
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 20
+
+
+# 打印sql
+logging:
+  level:
+    com.liziyuan.search.answers.dao.mapper: debug
+  #config: classpath:log4j2.xml

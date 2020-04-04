@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <option name="USE_RELEASE_OPTION" value="false" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="springboot-basic-main" />
+        <module name="springboot-basic-common" />
+        <module name="springboot-basic-dao" />
+        <module name="springboot-basic-rpc-service" />
+        <module name="springboot-basic-rpc-api" />
+        <module name="springboot-basic-service" />
+        <module name="springboot-basic-domain" />
+        <module name="springboot-basic-restful" />
+        <module name="springboot-basic-util" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8" />
+  </component>
+</project>

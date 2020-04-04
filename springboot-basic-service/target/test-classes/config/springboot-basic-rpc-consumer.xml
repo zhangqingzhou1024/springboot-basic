@@ -1,0 +1,25 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo
+       http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- application -->
+    <!-- 使用consumer中的application -->
+    <dubbo:application id="springboot-basic-rpc-provider" owner="${dubbo.application.owner}"
+                       name="${dubbo.application.name}"/>
+
+    <!-- zookeeper注册中心 -->
+    <dubbo:registry id="springboot-basic-rpc-registry" protocol="zookeeper"
+                    address="${dubbo.application.zkAddress}"
+                    group="${dubbo.application.zkGroup}">
+    </dubbo:registry>
+
+    <!-- 连通性测试接口 -->
+    <dubbo:reference registry="springboot-basic-rpc-registry" id="connectRpcService"
+                     group="${dubboConsumer.application.zkGroup}"
+                     interface="com.liziyuan.hope.rpc.api.ConnectRpcService" check="false"
+                     version="1.0" timeout="6000"/>
+</beans>

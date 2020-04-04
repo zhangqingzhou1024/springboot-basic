@@ -1,0 +1,84 @@
+#项目-服务设置
+server:
+  port: 18089
+  tomcat:
+    uri-encoding: utf-8
+
+# spring 相关配置（如多配置文件）
+spring:
+  profiles:
+    active: dev
+
+  ## mysql 配置
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://serverIp:3306/springboot_study?useUnicode=true&characterEncoding=UTF-8
+    username: data
+    password: 2020@*#DatA
+    initialSize: 10
+    maxIdle: 50
+    minIdle: 6
+    maxActive: 50
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 1
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: false
+    maxPoolPreparedStatementPerConnectionSize: 20
+
+  # redis
+  redis:
+    # Redis数据库索引（默认为0）
+    database: 0
+    host: serverIp
+    port: 6379
+    password:
+    # 连接超时时间（毫秒）
+    timeout: 0
+    pool:
+      # 连接池最大连接数（使用负值表示没有限制）
+      max-active: 8
+      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-wait: -1
+      # 连接池中的最大空闲连接
+      max-idle: 8
+      # 连接池中的最小空闲连接
+      min-idle: 0
+    session:
+      store-type: none
+
+
+
+# dubbo
+dubbo:
+  application:
+    name: springboot-basic-rpc-service
+    owner: zqz
+    zkAddress: serverIp:2181
+    zkGroup: liziyuan
+    dubboPort: 20898
+    providerConnections: 0
+    providerThreads: 50
+    providerAccepts: 500
+    qosEnable: false
+  # dubbo 停止等待，默认10000
+  service:
+    shutdown:
+      wait: 15000
+
+## dubbo消费端
+dubboConsumer:
+  application:
+    name: springboot-basic-rpc-service
+    owner: zqz
+    zkAddress: serverIp:2181
+    zkGroup: liziyuan
+
+# 打印sql
+logging:
+  level:
+    com.liziyuan.hope.dao.mapper: debug
+  #config: classpath:log4j2.xml
