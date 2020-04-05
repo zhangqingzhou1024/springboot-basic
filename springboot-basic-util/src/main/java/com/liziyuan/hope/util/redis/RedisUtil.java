@@ -1,7 +1,7 @@
 package com.liziyuan.hope.util.redis;
 
-import com.liziyuan.hope.domain.constant.NumberConst;
-import com.liziyuan.hope.domain.constant.StringConst;
+import com.liziyuan.hope.common.constant.NumberConst;
+import com.liziyuan.hope.common.constant.StringConst;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -875,6 +875,5 @@ public class RedisUtil {
         }
         return releaseResult;
     }
-
 
 }

@@ -5,7 +5,7 @@
 
 package com.liziyuan.hope.common.utils.file;
 
-import com.liziyuan.hope.common.utils.DateHelper;
+import com.liziyuan.hope.common.utils.date.DateHelper;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -100,7 +100,7 @@ public class ExcelExporter {
                         }
                     } else if (!(value instanceof Integer) && !(value instanceof Short)) {
                         if (value instanceof Date) {
-                            String cellValue01 = DateHelper.formatDateTime((Date) value);
+                            String cellValue01 = DateHelper.dateFormat((Date) value);
                             cell.setCellValue(cellValue01);
                         } else if (value instanceof Boolean) {
                             Boolean booleanValue = (Boolean) value;

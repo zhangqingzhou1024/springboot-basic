@@ -1,6 +1,4 @@
-package com.liziyuan.hope.domain.constant;
-
-import java.io.Serializable;
+package com.liziyuan.hope.common.constant;
 
 /**
  * 各种符号
@@ -9,7 +7,7 @@ import java.io.Serializable;
  * @version 1.0
  * @date 2019-03-05 10:35
  */
-public class SymbolConst implements Serializable {
+public class SymbolConst {
 
     /**
      * char的下划线

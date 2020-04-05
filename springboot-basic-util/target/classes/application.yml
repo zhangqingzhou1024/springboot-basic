@@ -12,7 +12,7 @@ spring:
   ## mysql 配置
   datasource:
     driverClassName: com.mysql.jdbc.Driver
-    url: jdbc:mysql://47.104.247.12:3306/springboot_study?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://serverIp:3306/springboot_study?useUnicode=true&characterEncoding=UTF-8
     username: data
     password: 2020@*#DatA
     initialSize: 10
@@ -33,7 +33,7 @@ spring:
   redis:
     # Redis数据库索引（默认为0）
     database: 0
-    host: 47.104.247.12
+    host: serverIp
     port: 6379
     password:
     # 连接超时时间（毫秒）

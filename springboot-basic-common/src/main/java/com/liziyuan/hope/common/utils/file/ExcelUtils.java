@@ -1,7 +1,7 @@
 
 package com.liziyuan.hope.common.utils.file;
 
-import com.liziyuan.hope.common.utils.DateHelper;
+import com.liziyuan.hope.common.utils.date.DateHelper;
 import org.apache.commons.lang.ArrayUtils;
 import org.apache.commons.lang.ObjectUtils;
 import org.apache.commons.lang3.StringUtils;
@@ -154,7 +154,7 @@ public class ExcelUtils {
             Object value = field.get(data);
             if (null != value) {
                 if (value instanceof Date) {
-                    value = DateHelper.formatDateTime((Date) value);
+                    value = DateHelper.dateFormat((Date) value);
                 }
 
                 cellValue = ObjectUtils.toString(value);

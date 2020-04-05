@@ -3,7 +3,9 @@
 package com.liziyuan.hope.common.utils.validate;
 
 
-import com.liziyuan.hope.common.utils.DateHelper;
+
+
+import com.liziyuan.hope.common.utils.date.DateHelper;
 
 import java.util.Date;
 
@@ -15,7 +17,7 @@ import java.util.Date;
 public final class FieldDefaultValueUtils {
     public static final int default_Integer = -1;
     public static final String default_String = "";
-    public static final Date default_Date = DateHelper.parseDateTime("0000-00-00 00:00:00");
+    public static final Date default_Date = DateHelper.dateParse("1970-01-01 00:00:00");
     public static final Integer MAX_INT = 2147483647;
     public static final Integer MIN_INT = -2147483648;
 
@@ -23,7 +25,7 @@ public final class FieldDefaultValueUtils {
     }
 
     public static <T> boolean isDefaultOrNull(T value) {
-        return value == null ? true : isDefault(value);
+        return value == null || isDefault(value);
     }
 
     public static <T> boolean isDefault(T value) {
@@ -34,7 +36,7 @@ public final class FieldDefaultValueUtils {
         } else if (String.class.getName().equals(value.getClass().getName())) {
             return isDefaultString((String) value);
         } else {
-            return Date.class.getName().equals(value.getClass().getName()) ? isDefaultDate((Date) value) : false;
+            return Date.class.getName().equals(value.getClass().getName()) && isDefaultDate((Date) value);
         }
     }
 
@@ -55,34 +57,34 @@ public final class FieldDefaultValueUtils {
     }
 
     public static boolean isMaxInteger(Integer value) {
-        return value == null ? false : value.equals(MAX_INT);
+        return value != null && value.equals(MAX_INT);
     }
 
     public static boolean isMinInteger(Integer value) {
-        return value == null ? false : value.equals(MIN_INT);
+        return value != null && value.equals(MIN_INT);
     }
 
     public static boolean isMaxLong(Long value) {
-        return value == null ? false : value.equals((long) MAX_INT);
+        return value != null && value.equals((long) MAX_INT);
     }
 
     public static boolean isMinLong(Long value) {
-        return value == null ? false : value.equals((long) MIN_INT);
+        return value != null && value.equals((long) MIN_INT);
     }
 
     public static boolean isMinIntegerOrNull(Integer value) {
-        return value == null ? true : value.equals(MIN_INT);
+        return value == null || value.equals(MIN_INT);
     }
 
     public static boolean isMinLongOrNull(Long value) {
-        return value == null ? true : value.equals((long) MIN_INT);
+        return value == null || value.equals((long) MIN_INT);
     }
 
     public static boolean isDefaultString(String value) {
-        return value == null ? false : "".equals(value);
+        return value != null && "".equals(value);
     }
 
     public static boolean isDefaultDate(Date value) {
-        return value == null ? false : default_Date.equals(value);
+        return value != null && default_Date.equals(value);
     }
 }

@@ -1,4 +1,4 @@
-package com.liziyuan.hope.domain.constant;
+package com.liziyuan.hope.common.constant;
 
 /**
  * 字符串常量
@@ -15,6 +15,11 @@ public class StringConst {
     public static final String DEFAULT_STRING = "";
 
     /**
+     * 字符型的0
+     */
+    public static final String ZERO_STRING = "0";
+
+    /**
      * redis nx
      */
     public static final String SET_IF_NOT_EXIST = "NX";
@@ -28,6 +33,15 @@ public class StringConst {
      * 加锁成功
      */
     public static final String LOCK_SUCCESS = "OK";
+
+    /**
+     * 开始时间的后缀
+     */
+    public static final String START_TIME_SUFFIX = " 00:00:00";
+    /**
+     * 结束时间的后缀
+     */
+    public static final String END_TIME_SUFFIX = " 23:59:59";
 
     /**
      * 默认时间

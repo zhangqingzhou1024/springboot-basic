@@ -1,10 +1,11 @@
-package com.liziyuan.hope.domain.constant;
+package com.liziyuan.hope.common.constant;
 
 /**
- * 数字常量
+ * 字符串常量
  *
  * @author zqz
  * @version 1.0
+ * @date 2019-05-28 23:32
  */
 public class NumberConst {
 
