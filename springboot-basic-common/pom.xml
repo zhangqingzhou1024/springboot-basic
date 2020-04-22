@@ -134,6 +134,22 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.9.5</version>
         </dependency>
+        <dependency>
+            <groupId>com.schibsted.spt.data</groupId>
+            <artifactId>jslt</artifactId>
+            <version>0.1.9</version>
+        </dependency>
+        <dependency>
+            <groupId>com.ibm.jsonata4java</groupId>
+            <artifactId>JSONata4Java</artifactId>
+            <version>1.2</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
+        <dependency>
+            <groupId>org.apache.avro</groupId>
+            <artifactId>avro</artifactId>
+            <version>1.9.0</version>
+        </dependency>
     </dependencies>
 
 </project>

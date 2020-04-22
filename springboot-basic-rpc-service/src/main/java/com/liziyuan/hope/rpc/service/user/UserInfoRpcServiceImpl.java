@@ -19,6 +19,7 @@ public class UserInfoRpcServiceImpl implements UserInfoRpcService {
     @Resource
     private UserFacadeService userFacadeService;
 
+    @Override
     public ListDataResponse<UserDto> getUsers(UserQuery userQuery) {
         return userFacadeService.getUsers(userQuery);
     }
