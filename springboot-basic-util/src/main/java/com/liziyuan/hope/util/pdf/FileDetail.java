@@ -24,6 +24,19 @@ public class FileDetail {
                 ", fileName='" + fileName + '\'' +
                 ", containurls=" + containurls +
                 '}';*/
-        return filePath + "/" + fileName + " ==> " + containurls.get(0);
+        StringBuffer stringBuffer = new StringBuffer();
+        if (containurls != null) {
+            for (String containurl : containurls) {
+                stringBuffer.append("\n").append(fileName + " ==> " + containurl);
+            }
+        }
+        // return fileName + " ==> " + containurls.get(0);
+        return stringBuffer.toString().replaceFirst("\n", "");
+    }
+
+    public static void main(String[] args) {
+        String a = "aaa\nbbb\nccc";
+        System.out.println(a);
+        System.out.println(a.replaceFirst("\n",""));
     }
 }

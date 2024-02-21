@@ -12,9 +12,8 @@ import java.util.regex.Pattern;
  * @date 2024-02-20 20:37
  */
 public class ContextFilter {
-
-    //static final String YD_NOTE_REGEX = "\\bhttp://note\\.youdao\\.com\\S*";
-    static final String YD_NOTE_REGEX = "(https?://note\\.youdao\\.com\\S*)";
+    static final String YD_NOTE_REGEX = "(https?:\\S*)";
+    // static final String YD_NOTE_REGEX = "(https?://note\\.youdao\\.com\\S*)";
     static final Pattern ID_NOTE_pattern = Pattern.compile(YD_NOTE_REGEX);
 
     public static List<String> getYDNoteUrls(String content) {
@@ -82,11 +81,5 @@ public class ContextFilter {
 
         return null;
     }*/
-
-    public static void main(String[] args) {
-        List<String> ydNoteUrls = getYDNoteUrls("http://note.youdao.com/noteshare?\n" +
-                "id=0e14c4e1fa9ee6b3fda6da53fd20a04d&sub=1E31F1D71A644ECE84476D66B1E43FE6");
-        System.out.println(ydNoteUrls);
-    }
 
 }

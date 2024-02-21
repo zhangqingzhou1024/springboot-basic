@@ -15,7 +15,7 @@ import java.util.List;
 public class PDFExtracter {
 
     public static void main(String[] args) {
-        String directoryPath = "XXX";
+        String directoryPath = "F:\\03学习\\进良分享-图灵";
         List<File> pdfFiles = new ArrayList<>();
         findPDFFiles(new File(directoryPath), pdfFiles);
         System.out.println("pdf nums ==> " + pdfFiles.size());
